@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DisplayRockets from './components/DisplayRockets';
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
