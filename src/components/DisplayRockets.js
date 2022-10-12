@@ -12,7 +12,6 @@ function DisplayRockets() {
   }, [dispatch]);
   return (
     <div>
-      <h1>Rockets</h1>
       <Rocket rockets={rockets.lists} />
     </div>
   );

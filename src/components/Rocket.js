@@ -25,7 +25,6 @@ function Rocket({ rockets }) {
             </Button>
           </Card.Body>
         </Card>
-
       ))}
 
     </div>
