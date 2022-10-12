@@ -1,30 +1,27 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Rockets from './pages/Rockets';
 import Missions from './pages/Missions';
 import Profile from './pages/Profile';
+import store from './redux/configureStore';
+import { fetchMisions } from './redux/missions/missionsSlice';
 
 const App = () => {
+  useEffect(() => {
+    store.dispatch(fetchMisions());
+  }, []);
 
   return (
-    <Router>
+    <div>
       <NavBar />
       <Routes>
-        <Route exact path="/" >
-          <Rockets />
-        </Route>
-        <Route exact path="/Rockets" >
-          <Rockets />
-        </Route>
-        <Route exact path="/missions" >
-          <Missions />
-        </Route>
-        <Route exact path="/my-profile" >
-          <Profile />
-        </Route>
+        <Route exact path="/"  element={<Rockets />} />
+        <Route path="/rockets" element={<Rockets />} />
+        <Route path="/missions" element= {<Missions />} />
+        <Route path="/my-profile" element={<Profile />} />
       </Routes>
-    </Router>
+    </div>
   );
 };
 
