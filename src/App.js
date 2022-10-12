@@ -1,11 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyProfile from './components/MyProfile';
+import DisplayRockets from './components/DisplayRockets';
 
 function App() {
   return (
     <div className="App">
-      <MyProfile />
+      <DisplayRockets />
     </div>
   );
 }

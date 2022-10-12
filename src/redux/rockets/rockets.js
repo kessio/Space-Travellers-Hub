@@ -1,40 +1,34 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const api = "https://api.spacexdata.com/v3/rockets";
+const api = 'https://api.spacexdata.com/v3/rockets';
 
-  const initialState = {
-    rockets: [],
-    status: "idle",
-    Error: null
-  };
+const initialState = {
+  lists: [],
+  status: null,
+};
 
-  export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () =>{
-     const response = await axios.get(api);
-     return response.data;
+export const fetchRockets = createAsyncThunk(
+  'rockets/fetchRockets',
+  async () => (await axios.get(api)).data,
+);
 
-   });
+const rocketsSlice = createSlice({
+  name: 'rockets',
+  initialState,
+  extraReducers: {
+    [fetchRockets.pending]: (state, action) => {
+      state.status = 'Loading';
+    },
+    [fetchRockets.fulfilled]: (state, { payload }) => {
+      state.lists = payload,
+      state.status = 'Success';
+    },
+    [fetchRockets.rejected]: (state, action) => {
+      state.status = 'Failed';
+    },
+  },
 
-  const rocketsSlice = ({
-    name: "rockets",
-    initialState, 
-    reducers: {},
-    extraReducers(builder){
-        builder
-        .addCase(fetchRockets.pending, (state, action)=> {
-            state.status = "Loading"
-        })
-        .addCase(fetchRockets.fulfilled, (state, action)=> {
-            state.status = "Success",
-            state.rockets = action.payload
-        })
-        .addCase(fetchRockets.rejected, (state, action)=> {
-            state.status = "Fail"
-        })
-        
-    }
+});
 
-    
-  });
-
-  export default rocketsSlice.reducer
+export default rocketsSlice.reducer;
