@@ -4,12 +4,13 @@ import store from '../../redux/configureStore';
 import { removeMission } from '../../redux/missions/missionsSlice';
 
 const DisplayMissions = (props) => {
+  console.log(props)
   const { id, name, description, isReserved } = props;
 
   return (
     <tr>
-      <td > {name} </td>
-      <td > {description} </td>
+      <td> {name} </td>
+      <td> {description} </td>
       {isReserved ? <td>MEMBER</td> : <td>NOT A MEMBER</td>}
       <td>
         <button className={(isReserved) ? 'red-btn-color' : 'btn-color-blue'} 

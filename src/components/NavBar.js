@@ -1,5 +1,5 @@
 import React from 'react';
-import { uuid as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from '../assets/planet_logo.png';
 import NavBarStyles from './NavBarStyles.module.css'
@@ -24,7 +24,7 @@ const NavBar = () => {
     if (pathname === 'myProfile') {
         return `${NavBarStyles.linkStyles} ${NavBarStyles.navLinkBorder} ${NavBarStyles.active}`;
     }
-    return `${NavBarStyles.linkStyles} ${NavBarStyles.navLinkBorder}`;    
+    return `${NavBarStyles.linkStyles}`;    
   }
 
   return (

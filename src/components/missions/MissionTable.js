@@ -1,32 +1,32 @@
-import { uuid as uuidv4} from "uuidv4";
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useSelector } from 'react-redux';
 import DisplayMissions from './DisplayMissions';
 
-import React from 'react'
-
 const MissionTable = () => {
   const missions = useSelector((state) => state.missions.data);
+  console.log(missions)
 
   return (
     <div>
       <table className="missions-table" >
-        <tr className="col-header">
-          <tr className="col-header">Mission</tr>
+        <thead>
+          <tr className="col-header">
+          <th className="col-header">Mission</th>
           <th>Description</th>
           <th>Status</th>
           <th></th>
-        </tr>
+          </tr>
+        </thead>
         <tbody>
-          {
-            missions.map((mission) => (
+          {missions.map((mission) => (
               <DisplayMissions
                 key={uuidv4()}
                 id={mission.mission_id}
-                name={mission.misson_name}
+                name={mission.mission_name}
                 description={mission.description}
                 isReserved={mission.reserved} />
-            ))
-          }
+          ))}
         </tbody>
       </table>
     </div>

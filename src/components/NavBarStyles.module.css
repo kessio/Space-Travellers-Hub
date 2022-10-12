@@ -6,16 +6,23 @@
     border-bottom: 1px solid #d3d3d3;
 }
 
-.logo {
+.logoHolder {
     display: flex;
     align-items: center;
-    width: 60px;
+    gap: 10px;
+}
+
+.logo {
+    width: 55px;
     height: 50px;
 }
 
-.linkStyles {
+.linksHolder {
     display: flex;
-    align-items: center;
+    gap: 10px;
+}
+
+.linkStyles {
     color: #003ee3;
     text-decoration: none;
   }
@@ -26,5 +33,5 @@
 
 .navLinkBorder {
     padding-right: 0.5rem;
-    border-right: 1px solid #d3d3d3;
+    border-right: 2px solid #b4b2b2;
   }
