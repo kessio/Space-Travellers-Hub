@@ -9,14 +9,20 @@ function Rocket({ rockets }) {
     <div>
       {rockets.map((rocket) => (
 
-        <Card className="rocket-card">
-          <Card.Img style={{ width: '18rem' }} variant="card-img-top" src={rocket.flickr_images} />
-          <Card.Body key={rocket.id}>
+        <Card key={rocket.id} className="rocket-card m-4">
+          <Card.Img style={{ width: '20rem' }} variant="card-img-top" src={rocket.flickr_images} />
+          <Card.Body>
             <Card.Title>{rocket.rocket_name}</Card.Title>
             <Card.Text>
               {rocket.description}
             </Card.Text>
-            <Button variant="primary">Reserve Rocket</Button>
+            <Button
+              type="button"
+              variant="primary"
+              id={rocket.id}
+            >
+              Reserve Rocket
+            </Button>
           </Card.Body>
         </Card>
 
