@@ -5,7 +5,6 @@ import DisplayMissions from './DisplayMissions';
 
 const MissionTable = () => {
   const missions = useSelector((state) => state.missions.data);
-  console.log(missions);
 
   return (
     <div>
@@ -15,7 +14,7 @@ const MissionTable = () => {
             <th className="col-header">Mission</th>
             <th>Description</th>
             <th>Status</th>
-            <th />
+            <th></th>
           </tr>
         </thead>
         <tbody>

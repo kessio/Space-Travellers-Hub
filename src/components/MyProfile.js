@@ -1,12 +1,15 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import ListReservedMissions from './missions/ListReservedMissions';
 
 function MyProfile() {
   return (
     <div className="profile">
       <div>
-        <h3>My Mission</h3>
+        <h3>My Missions</h3>
+        <ListReservedMissions />
       </div>
       <div>
         <h3>My Rockets</h3>
