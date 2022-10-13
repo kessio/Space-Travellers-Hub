@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function MyProfile() {
   return (
@@ -9,7 +10,13 @@ function MyProfile() {
       </div>
       <div>
         <h3>My Rockets</h3>
-        <Button type="button" className="btn btn-primary">Login here</Button>
+        <Card style={{ width: '18rem' }}>
+      <ListGroup variant="flush">
+        <ListGroup.Item>Cras justo odio</ListGroup.Item>
+        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+      </ListGroup>
+    </Card>
       </div>
     </div>
   );
