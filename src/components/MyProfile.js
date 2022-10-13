@@ -18,13 +18,13 @@ function MyProfile() {
       <div>
         <h3>My Rockets</h3>
         <Card style={{ width: '18rem' }}>
-        <ListGroup variant="flush">
-          {reservedRockets.map((rocket) => (
-           <ListGroup.Item key={rocket.id}>{rocket.rocket_name}</ListGroup.Item>
-          ))}
-         
-      </ListGroup>
-    </Card>
+          <ListGroup variant="flush">
+            {reservedRockets.map((rocket) => (
+              <ListGroup.Item key={rocket.id}>{rocket.rocket_name}</ListGroup.Item>
+            ))}
+
+          </ListGroup>
+        </Card>
       </div>
     </div>
   );
