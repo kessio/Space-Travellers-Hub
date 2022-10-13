@@ -8,9 +8,9 @@ const NavBar = () => {
   const location = useLocation();
   const rocketLinkStyles = (pathname) => {
     if (pathname === '/rockets' || pathname === '/' || pathname === '') {
-      return `${NavBarStyles.linkStyles} ${NavBarStyles.active}`;
+      return `${NavBarStyles.linkStyles} ${NavBarStyles.marginRight}  ${NavBarStyles.active}`;
     }
-    return `${NavBarStyles.linkStyles}`;
+    return `${NavBarStyles.linkStyles} ${NavBarStyles.marginRight} `;
   };
 
   const missionLinkStyles = (pathname) => {
@@ -22,15 +22,15 @@ const NavBar = () => {
 
   const profileLinkStyles = (pathname) => {
     if (pathname === 'my_profile') {
-      return `${NavBarStyles.linkStyles} ${NavBarStyles.navLinkBorder} ${NavBarStyles.active}`;
+      return `${NavBarStyles.linkStyles} ${NavBarStyles.marginLeft} ${NavBarStyles.navLinkBorder} ${NavBarStyles.active}`;
     }
-    return `${NavBarStyles.linkStyles}`;
+    return `${NavBarStyles.linkStyles} ${NavBarStyles.marginLeft}`;
   };
 
   return (
     <nav className={NavBarStyles.navbar}>
       <div className={NavBarStyles.logoHolder}>
-        <img src={Logo} alt="Planet" className={NavBarStyles.logo} />
+        <img src={Logo} alt="Planet" className={`${NavBarStyles.logo} ${NavBarStyles.marginRight}`}  />
         <h1>Space Travellers&apos; Hub</h1>
       </div>
       <div className={NavBarStyles.linksHolder}>
