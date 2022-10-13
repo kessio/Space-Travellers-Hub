@@ -22,13 +22,12 @@ const Rocket = ({ rockets }) => {
             </Card.Text>
             <Button
               type="button"
-              variant="primary"
-              id={rocket.id}
+              variant={ rocket.reserved === true ? "outline-secondary" : "primary"} 
               onClick={() => {
                 store.dispatch(reserveRocket(rocket.id));
               }}
             >
-              Reserve Rocket
+               {rocket.reserved === true ? "Cancel Reservations" : "Reserve Rocket"}
             </Button>
           </Card.Body>
         </Card>
