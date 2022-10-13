@@ -1,7 +1,8 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import React from 'react';
-import RemoveReservedMissions from './RemoveReservedMissions';
+import Card from 'react-bootstrap/Card';
+import MissionsProfile from './MissionsProfile';
 
 const ListReservedMissions = () => {
   const missions = useSelector((state) => state.missions);
@@ -10,18 +11,15 @@ const ListReservedMissions = () => {
 
   return (
     <div>
-      { reservedMissions.length === 0 && <p>&emsp; Join A mission First</p>}
-      <table>
-        <tbody>
-          {reservedMissions.map((mission) => (
-            <RemoveReservedMissions
-              key={uuidv4()}
-              id={mission.mission_id}
-              name={mission.mission_name}
-            />
-          ))}
-        </tbody>
-      </table>
+      { reservedMissions.length === 0 && <p className="firstJoin">&emsp; You Have Not Joined Any Mission</p>}
+      <Card style={{ width: '40rem' }}>
+        {reservedMissions.map((mission) => (
+          <MissionsProfile
+            key={uuidv4()}
+            name={mission.mission_name}
+          />
+        ))}
+      </Card>
     </div>
   );
 };
