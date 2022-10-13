@@ -1,6 +1,5 @@
-@media(min-width: 768px) {
-.rocket-card {
-  flex-direction: row;
-}
-
+@media (min-width: 768px) {
+  .rocket-card {
+    flex-direction: row;
+  }
 }
