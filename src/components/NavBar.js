@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   const profileLinkStyles = (pathname) => {
-    if (pathname === 'my-profile') {
+    if (pathname === 'my_profile') {
       return `${NavBarStyles.linkStyles} ${NavBarStyles.navLinkBorder} ${NavBarStyles.active}`;
     }
     return `${NavBarStyles.linkStyles}`;
@@ -31,7 +31,7 @@ const NavBar = () => {
     <nav className={NavBarStyles.navbar}>
       <div className={NavBarStyles.logoHolder}>
         <img src={Logo} alt="Planet" className={NavBarStyles.logo} />
-        <h1>Space Travellers' Hub</h1>
+        <h1>Space Travellers&apos; Hub</h1>
       </div>
       <div className={NavBarStyles.linksHolder}>
         <NavLink key={uuidv4()} className={rocketLinkStyles(location.pathname)} to="/rockets">
@@ -40,7 +40,7 @@ const NavBar = () => {
         <NavLink key={uuidv4()} className={missionLinkStyles(location.pathname)} to="/missions">
           Missions
         </NavLink>
-        <NavLink key={uuidv4()} className={profileLinkStyles(location.pathname)} to="/my-profile">
+        <NavLink key={uuidv4()} className={profileLinkStyles(location.pathname)} to="/my_profile">
           My Profile
         </NavLink>
       </div>
