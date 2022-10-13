@@ -4,7 +4,11 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const MissionsProfile = ({ name }) => (
   <ListGroup variant="flush">
-    <ListGroup.Item> {name} </ListGroup.Item>
+    <ListGroup.Item>
+      {' '}
+      {name}
+      {' '}
+    </ListGroup.Item>
   </ListGroup>
 );
 

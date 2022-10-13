@@ -30,7 +30,7 @@ const NavBar = () => {
   return (
     <nav className={NavBarStyles.navbar}>
       <div className={NavBarStyles.logoHolder}>
-        <img src={Logo} alt="Planet" className={`${NavBarStyles.logo} ${NavBarStyles.marginRight}`}  />
+        <img src={Logo} alt="Planet" className={`${NavBarStyles.logo} ${NavBarStyles.marginRight}`} />
         <h1>Space Travellers&apos; Hub</h1>
       </div>
       <div className={NavBarStyles.linksHolder}>
