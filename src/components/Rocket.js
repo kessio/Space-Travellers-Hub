@@ -1,25 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../App.css';
+import store from '../redux/configureStore';
+import { reserveRocket } from '../redux/rockets/rockets';
+
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import '../App.css';
+import { Badge } from 'react-bootstrap';
 
-function Rocket({ rockets }) {
+const Rocket = ({ rockets }) => {
+  
   return (
     <div>
       {rockets.map((rocket) => (
-
         <Card key={rocket.id} className="rocket-card m-4">
-          <Card.Img style={{ width: '20rem' }} variant="card-img-top" src={rocket.flickr_images} />
+          <Card.Img style={{ width: '20rem' }} variant="card-img-top" src={rocket.flickr_images[1]} />
           <Card.Body>
             <Card.Title>{rocket.rocket_name}</Card.Title>
             <Card.Text>
-              {rocket.description}
+             {rocket.reserved === true ? <Badge bg="success" className="m-1">Reserved</Badge> : "" }{rocket.description}
             </Card.Text>
             <Button
               type="button"
               variant="primary"
               id={rocket.id}
+              onClick={() => {
+                store.dispatch(reserveRocket(rocket.id));
+              }}
             >
               Reserve Rocket
             </Button>
@@ -29,7 +36,7 @@ function Rocket({ rockets }) {
 
     </div>
   );
-}
+};
 
 Rocket.propTypes = {
   rockets: PropTypes.arrayOf(

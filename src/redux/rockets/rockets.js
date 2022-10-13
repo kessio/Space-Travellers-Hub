@@ -11,12 +11,49 @@ const initialState = {
 
 export const fetchRockets = createAsyncThunk(
   'rockets/fetchRockets',
-  async () => (await axios.get(api)).data,
+  async () => {
+    const response = await axios.get(api);
+    const data = response.data;
+    const rocketLists = []
+    data.forEach(res => {
+      const {
+        id, flickr_images,description,rocket_name
+      } = res;
+     const newRocketLists = {
+      id,
+      flickr_images,
+      description,
+      rocket_name,
+      reserved: false
+     }
+      rocketLists.push(newRocketLists)
+      
+    });
+    return rocketLists;
+    
+  } 
 );
 
 const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
+  reducers: {
+    reserveRocket: (state, action) => {
+      const rockets = {
+        ...state,
+      };
+      rockets.lists = rockets.lists.map((rocket) => {
+        if(rocket.id !== action.payload){
+          return rocket;
+        }
+       
+    return { ...rocket,
+       reserved: !rocket.reserved,
+      };
+      })
+      return rockets;
+    }
+  },
   extraReducers: {
     [fetchRockets.pending]: (state, action) => {
       state.status = 'Loading';
@@ -33,3 +70,4 @@ const rocketsSlice = createSlice({
 });
 
 export default rocketsSlice.reducer;
+export const { reserveRocket } = rocketsSlice.actions;
