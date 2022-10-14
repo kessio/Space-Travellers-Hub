@@ -20,7 +20,7 @@ const App = () => {
         <Route exact path="/" element={<DisplayRockets />} />
         <Route path="/rockets" element={<DisplayRockets />} />
         <Route path="/missions" element={<Missions />} />
-        <Route path="/my-profile" element={<MyProfile />} />
+        <Route path="/my_profile" element={<MyProfile />} />
       </Routes>
     </div>
   );

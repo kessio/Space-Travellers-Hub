@@ -10,19 +10,18 @@ function MyProfile() {
   const reservedRockets = lists.filter((myrockets) => myrockets.reserved);
 
   return (
-    <div className="profile">
-      <div>
-        <h3>My Missions</h3>
+    <div className="profilesCont">
+      <div className="missionsCont">
+        <h3 className="heading">My Missions</h3>
         <ListReservedMissions />
       </div>
-      <div>
-        <h3>My Rockets</h3>
-        <Card style={{ width: '18rem' }}>
+      <div className="rocketsCont">
+        <h3 className="heading">My Rockets</h3>
+        <Card style={{ width: '40rem' }}>
           <ListGroup variant="flush">
             {reservedRockets.map((rocket) => (
               <ListGroup.Item key={rocket.id}>{rocket.rocket_name}</ListGroup.Item>
             ))}
-
           </ListGroup>
         </Card>
       </div>

@@ -10,20 +10,20 @@ const DisplayMissions = (props) => {
 
   return (
     <tr>
-      <td>
+      <td className="fs-5 fw-bold">
         {' '}
         {name}
         {' '}
       </td>
-      <td>
+      <td className="p-2">
         {' '}
         {description}
         {' '}
       </td>
-      {isReserved ? <td>MEMBER</td> : <td>NOT A MEMBER</td>}
-      <td>
+      {isReserved ? <td className="badge bg-primary text-light m-2 mt-5">Active Member</td> : <td className="badge bg-secondary text-light m-2 mt-5">NOT A MEMBER</td>}
+      <td className="align-middle m-3">
         <button
-          className={(isReserved) ? 'red-btn-color' : 'btn-color-blue'}
+          className={(isReserved) ? 'btn btn-outline-danger' : 'btn btn-outline-secondary'}
           type="button"
           onClick={() => store.dispatch(removeMission(id))}
         >
