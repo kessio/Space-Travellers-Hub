@@ -5,36 +5,3 @@ exports[`snapshot test for DisplayRocket Component Matches the snapshot 1`] = `
   <div />
 </div>
 `;
-
-exports[`snapshot test for RocketCard Component Matches the snapshot 1`] = `
-<div
-  className="rocket-card m-4 card"
->
-  <img
-    className="card-img-card-img-top"
-    style={
-      Object {
-        "width": "20rem",
-      }
-    }
-  />
-  <div
-    className="card-body"
-  >
-    <div
-      className="card-title h5"
-    />
-    <p
-      className="card-text"
-    />
-    <button
-      className="btn btn-primary"
-      disabled={false}
-      onClick={[Function]}
-      type="button"
-    >
-      Reserve Rocket
-    </button>
-  </div>
-</div>
-`;
