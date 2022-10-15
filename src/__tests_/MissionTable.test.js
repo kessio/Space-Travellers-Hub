@@ -3,8 +3,9 @@ import { Provider } from 'react-redux';
 import { create } from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
-import store from '../../redux/configureStore';
-import MissionTable from './MissionTable';
+import store from '../redux/configureStore';
+import MissionTable from '../components/missions/MissionTable';
+
 
 const createMissionComponent = create(
   <Provider store={store}>
