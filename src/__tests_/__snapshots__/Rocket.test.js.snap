@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`snapshot test for DisplayRocket Component Matches the snapshot 1`] = `
+<div>
+  <div />
+</div>
+`;
+
 exports[`snapshot test for RocketCard Component Matches the snapshot 1`] = `
 <div
   className="rocket-card m-4 card"
