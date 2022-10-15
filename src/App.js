@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import DisplayRockets from './components/rockets/DisplayRockets';
 import NavBar from './components/NavBar';
-import Missions from './pages/Missions';
+import Missions from './components/missions/MissionTable';
 import MyProfile from './components/MyProfile';
 import store from './redux/configureStore';
 import { fetchMisions } from './redux/missions/missionsSlice';

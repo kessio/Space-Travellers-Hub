@@ -6,7 +6,6 @@ import { render, screen } from '@testing-library/react';
 import store from '../redux/configureStore';
 import MissionTable from '../components/missions/MissionTable';
 
-
 const createMissionComponent = create(
   <Provider store={store}>
     <MissionTable />

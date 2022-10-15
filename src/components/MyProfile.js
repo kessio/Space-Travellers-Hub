@@ -17,11 +17,13 @@ function MyProfile() {
       </div>
       <div className="rocketsCont">
         <h3 className="heading">My Rockets</h3>
+        {reservedRockets.length === 0 && <p className="firstJoin">You Have Not Reserved Any Rockets</p>}
         <Card style={{ width: '40rem' }}>
           <ListGroup variant="flush">
             {reservedRockets.map((rocket) => (
               <ListGroup.Item key={rocket.id}>{rocket.rocket_name}</ListGroup.Item>
             ))}
+
           </ListGroup>
         </Card>
       </div>
