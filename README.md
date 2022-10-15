@@ -5,18 +5,18 @@
 > This project works with the real live data from the SpaceX API. It is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions. The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section.
 
 #### Objectives
-[x] Use React documentation.
-[x] Use React components.
-[x] Use React props.
-[x] Use React Router.
-[x] Connect React and Redux.
-[x] Handle events in a React app.
-[x] Write unit tests with React Testing Library.
-[x] Use styles in a React app.
-[x] Use React life cycle methods.
-[x] Apply React best practices and language style guides in code.
-[x] Use store, actions and reducers in React.
-[x] Perform a code review for a team member.
+- [x] (Use React documentation)
+- [x] (Use React components.)
+- [x] (Use React props.)
+- [x] (Use React Router.)
+- [x] (Connect React and Redux.)
+- [x] (Handle events in a React app.)
+- [x] (Write unit tests with React Testing Library.)
+- [x] (Use styles in a React app.)
+- [x] (Use React life cycle methods.)
+- [x] (Apply React best practices and language style guides in code.)
+- [x] (Use store, actions and reducers in React.)
+- [x] (Perform a code review for a team member.)
 
 ## Built With
 
