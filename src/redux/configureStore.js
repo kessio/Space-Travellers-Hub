@@ -9,7 +9,6 @@ const allReducers = combineReducers({
   missions: missionsSlice.reducer,
 });
 
-const middlewares = [logger];
 const store = configureStore({
   reducer: allReducers,
 },
