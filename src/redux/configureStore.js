@@ -1,8 +1,8 @@
 import { combineReducers, applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
 import rocketsSlice from './rockets/rockets';
 import missionsSlice from './missions/missionsSlice';
-import logger from 'redux-logger';
 
 const allReducers = combineReducers({
   rockets: rocketsSlice,
@@ -12,7 +12,6 @@ const allReducers = combineReducers({
 const store = configureStore({
   reducer: allReducers,
 },
-applyMiddleware(logger),
-);
+applyMiddleware(logger));
 
 export default store;
